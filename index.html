@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Climate Intelligence Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       LAYOUT WRAPPER — Sidebar + Main Content
+  ============================================================ -->
+  <div class="layout">
+
+    <!-- ============================================================
+         SIDEBAR NAVIGATION
+    ============================================================ -->
+    <aside class="sidebar" aria-label="Sidebar Navigation">
+      <!-- Brand / Logo -->
+      <div class="sidebar__brand">
+        <span class="sidebar__icon">🌍</span>
+        <span class="sidebar__title">ClimateIQ</span>
+      </div>
+
+      <!-- Primary Navigation Links -->
+      <nav class="sidebar__nav" aria-label="Primary Navigation">
+        <ul class="sidebar__list">
+          <li class="sidebar__item sidebar__item--active">
+            <a href="#" class="sidebar__link" aria-current="page">
+              <span class="sidebar__link-icon">◉</span> Dashboard
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <span class="sidebar__link-icon">📈</span> Analytics
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <span class="sidebar__link-icon">🗺</span> Region Map
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <span class="sidebar__link-icon">⚠️</span> Alerts
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <span class="sidebar__link-icon">♻️</span> Sustainability
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <span class="sidebar__link-icon">📰</span> News
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <span class="sidebar__link-icon">⚙️</span> Settings
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Sidebar Footer — System Status -->
+      <div class="sidebar__footer">
+        <div class="sidebar__status">
+          <span class="status-dot status-dot--online"></span>
+          <span class="sidebar__status-text">System Online</span>
+        </div>
+        <p class="sidebar__version">v2.4.1</p>
+      </div>
+    </aside>
+    <!-- /SIDEBAR NAVIGATION -->
+
+    <!-- ============================================================
+         MAIN CONTENT AREA
+    ============================================================ -->
+    <div class="main">
+
+      <!-- ============================================================
+           TOP NAVIGATION BAR
+      ============================================================ -->
+      <header class="topbar" role="banner">
+        <!-- Page Title & Breadcrumb -->
+        <div class="topbar__left">
+          <h1 class="topbar__heading">Climate Intelligence Dashboard</h1>
+          <p class="topbar__breadcrumb">
+            <span>Home</span> / <span class="topbar__breadcrumb--active">Dashboard</span>
+          </p>
+        </div>
+
+        <!-- Search, Notifications, Admin Profile -->
+        <div class="topbar__right">
+          <!-- Search Field -->
+          <label for="topbar-search" class="sr-only">Search</label>
+          <input
+            id="topbar-search"
+            class="topbar__search"
+            type="search"
+            placeholder="Search data, regions…"
+            aria-label="Search"
+          />
+
+          <!-- Notification Bell -->
+          <button class="topbar__icon-btn" aria-label="Notifications">
+            🔔
+            <span class="topbar__badge">3</span>
+          </button>
+
+          <!-- Admin Profile (Mini) -->
+          <div class="topbar__profile">
+            <div class="topbar__avatar" aria-hidden="true">AD</div>
+            <div class="topbar__profile-info">
+              <span class="topbar__profile-name">Admin User</span>
+              <span class="topbar__profile-role">Senior Analyst</span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- /TOP NAVIGATION BAR -->
+
+      <!-- ============================================================
+           PAGE CONTENT (scrollable)
+      ============================================================ -->
+      <main class="content" id="main-content">
+
+        <!-- ===========================================================
+             SECTION 1 — KPI CARDS (4 cards)
+        =========================================================== -->
+        <section class="section" aria-label="Key Performance Indicators">
+          <h2 class="section__title">Key Climate Indicators</h2>
+          <div class="kpi-grid">
+
+            <!-- KPI 1: Global Temperature Rise -->
+            <article class="kpi-card kpi-card--red" aria-label="Global Temperature Rise">
+              <div class="kpi-card__header">
+                <span class="kpi-card__icon">🌡️</span>
+                <span class="kpi-card__badge kpi-card__badge--danger">▲ Critical</span>
+              </div>
+              <p class="kpi-card__value">+1.2°C</p>
+              <p class="kpi-card__label">Global Temperature Rise</p>
+              <p class="kpi-card__sub">↑ 0.08°C vs last year</p>
+            </article>
+
+            <!-- KPI 2: Atmospheric CO₂ -->
+            <article class="kpi-card kpi-card--amber" aria-label="Atmospheric CO₂">
+              <div class="kpi-card__header">
+                <span class="kpi-card__icon">💨</span>
+                <span class="kpi-card__badge kpi-card__badge--warning">▲ High</span>
+              </div>
+              <p class="kpi-card__value">421 ppm</p>
+              <p class="kpi-card__label">Atmospheric CO₂</p>
+              <p class="kpi-card__sub">↑ 2.4 ppm vs last year</p>
+            </article>
+
+            <!-- KPI 3: Renewable Energy Share -->
+            <article class="kpi-card kpi-card--teal" aria-label="Renewable Energy Share">
+              <div class="kpi-card__header">
+                <span class="kpi-card__icon">⚡</span>
+                <span class="kpi-card__badge kpi-card__badge--success">▲ Growing</span>
+              </div>
+              <p class="kpi-card__value">34.7%</p>
+              <p class="kpi-card__label">Renewable Energy Share</p>
+              <p class="kpi-card__sub">↑ 3.1% vs last year</p>
+            </article>
+
+            <!-- KPI 4: Climate Risk Index -->
+            <article class="kpi-card kpi-card--orange" aria-label="Climate Risk Index">
+              <div class="kpi-card__header">
+                <span class="kpi-card__icon">🛡️</span>
+                <span class="kpi-card__badge kpi-card__badge--warning">● Elevated</span>
+              </div>
+              <p class="kpi-card__value">6.8<span class="kpi-card__value-unit">/10</span></p>
+              <p class="kpi-card__label">Climate Risk Index</p>
+              <p class="kpi-card__sub">↑ 0.3 pts vs last quarter</p>
+            </article>
+
+          </div>
+        </section>
+        <!-- /KPI CARDS -->
+
+        <!-- ===========================================================
+             SECTION 2 — CLIMATE TREND + REGION OVERVIEW (2-col)
+        =========================================================== -->
+        <section class="section two-col" aria-label="Climate Trends and Regional Overview">
+
+          <!-- Climate Trend Chart (CSS-only bar chart) -->
+          <article class="card" aria-label="Climate Trend">
+            <div class="card__header">
+              <h2 class="card__title">📊 Climate Trend</h2>
+              <span class="card__meta">CO₂ ppm — 2018–2024</span>
+            </div>
+            <div class="chart" role="img" aria-label="CO₂ trend bar chart from 2018 to 2024">
+              <!-- Each bar: height set via CSS custom property --h -->
+              <div class="chart__bar-wrap">
+                <div class="chart__bar" style="--h:60%;" title="2018: 408 ppm"></div>
+                <span class="chart__label">2018</span>
+                <span class="chart__val">408</span>
+              </div>
+              <div class="chart__bar-wrap">
+                <div class="chart__bar" style="--h:65%;" title="2019: 411 ppm"></div>
+                <span class="chart__label">2019</span>
+                <span class="chart__val">411</span>
+              </div>
+              <div class="chart__bar-wrap">
+                <div class="chart__bar" style="--h:68%;" title="2020: 413 ppm"></div>
+                <span class="chart__label">2020</span>
+                <span class="chart__val">413</span>
+              </div>
+              <div class="chart__bar-wrap">
+                <div class="chart__bar" style="--h:72%;" title="2021: 416 ppm"></div>
+                <span class="chart__label">2021</span>
+                <span class="chart__val">416</span>
+              </div>
+              <div class="chart__bar-wrap">
+                <div class="chart__bar" style="--h:78%;" title="2022: 418 ppm"></div>
+                <span class="chart__label">2022</span>
+                <span class="chart__val">418</span>
+              </div>
+              <div class="chart__bar-wrap">
+                <div class="chart__bar" style="--h:85%;" title="2023: 420 ppm"></div>
+                <span class="chart__label">2023</span>
+                <span class="chart__val">420</span>
+              </div>
+              <div class="chart__bar-wrap chart__bar-wrap--active">
+                <div class="chart__bar chart__bar--accent" style="--h:100%;" title="2024: 421 ppm"></div>
+                <span class="chart__label">2024</span>
+                <span class="chart__val">421</span>
+              </div>
+            </div>
+            <p class="chart__note">Data source: NOAA Global Monitoring Laboratory, 2024</p>
+          </article>
+
+          <!-- Region Overview Table -->
+          <article class="card" aria-label="Region Overview">
+            <div class="card__header">
+              <h2 class="card__title">🗺️ Region Overview</h2>
+              <span class="card__meta">Top 5 Regions</span>
+            </div>
+            <div class="table-wrap">
+              <table class="region-table" aria-label="Region Climate Overview">
+                <thead>
+                  <tr>
+                    <th scope="col">Region</th>
+                    <th scope="col">Temp Δ</th>
+                    <th scope="col">CO₂</th>
+                    <th scope="col">Risk</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>🌏 Asia Pacific</td>
+                    <td class="text-danger">+1.5°C</td>
+                    <td>438 ppm</td>
+                    <td>
+                      <div class="risk-bar"><div class="risk-bar__fill risk-bar__fill--high" style="--w:82%;"></div></div>
+                    </td>
+                    <td><span class="badge badge--danger">Critical</span></td>
+                  </tr>
+                  <tr>
+                    <td>🌍 Sub-Saharan</td>
+                    <td class="text-danger">+1.4°C</td>
+                    <td>412 ppm</td>
+                    <td>
+                      <div class="risk-bar"><div class="risk-bar__fill risk-bar__fill--high" style="--w:76%;"></div></div>
+                    </td>
+                    <td><span class="badge badge--warning">High</span></td>
+                  </tr>
+                  <tr>
+                    <td>🌎 Latin America</td>
+                    <td class="text-warning">+1.1°C</td>
+                    <td>407 ppm</td>
+                    <td>
+                      <div class="risk-bar"><div class="risk-bar__fill risk-bar__fill--mid" style="--w:60%;"></div></div>
+                    </td>
+                    <td><span class="badge badge--warning">Moderate</span></td>
+                  </tr>
+                  <tr>
+                    <td>🌐 North America</td>
+                    <td class="text-warning">+1.0°C</td>
+                    <td>420 ppm</td>
+                    <td>
+                      <div class="risk-bar"><div class="risk-bar__fill risk-bar__fill--mid" style="--w:55%;"></div></div>
+                    </td>
+                    <td><span class="badge badge--info">Stable</span></td>
+                  </tr>
+                  <tr>
+                    <td>🌍 Europe</td>
+                    <td class="text-success">+0.8°C</td>
+                    <td>398 ppm</td>
+                    <td>
+                      <div class="risk-bar"><div class="risk-bar__fill risk-bar__fill--low" style="--w:38%;"></div></div>
+                    </td>
+                    <td><span class="badge badge--success">Good</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+        </section>
+        <!-- /CLIMATE TREND + REGION OVERVIEW -->
+
+        <!-- ===========================================================
+             SECTION 3 — DISASTER ALERTS + SUSTAINABILITY TRACKER (2-col)
+        =========================================================== -->
+        <section class="section two-col" aria-label="Disaster Alerts and Sustainability Progress">
+
+          <!-- Disaster Alerts -->
+          <article class="card" aria-label="Disaster Alerts">
+            <div class="card__header">
+              <h2 class="card__title">⚠️ Disaster Alerts</h2>
+              <span class="badge badge--danger">3 Active</span>
+            </div>
+            <ul class="alert-list" aria-label="Active disaster alerts">
+
+              <li class="alert-item alert-item--critical">
+                <div class="alert-item__icon">🌊</div>
+                <div class="alert-item__body">
+                  <p class="alert-item__title">Coastal Flood Warning</p>
+                  <p class="alert-item__meta">Southeast Asia · Issued 2h ago</p>
+                </div>
+                <span class="badge badge--danger">Critical</span>
+              </li>
+
+              <li class="alert-item alert-item--high">
+                <div class="alert-item__icon">🔥</div>
+                <div class="alert-item__body">
+                  <p class="alert-item__title">Wildfire Risk Elevated</p>
+                  <p class="alert-item__meta">Western USA · Issued 5h ago</p>
+                </div>
+                <span class="badge badge--warning">High</span>
+              </li>
+
+              <li class="alert-item alert-item--moderate">
+                <div class="alert-item__icon">🌪️</div>
+                <div class="alert-item__body">
+                  <p class="alert-item__title">Tropical Storm Advisory</p>
+                  <p class="alert-item__meta">Gulf of Mexico · Issued 8h ago</p>
+                </div>
+                <span class="badge badge--warning">Moderate</span>
+              </li>
+
+              <li class="alert-item alert-item--watch">
+                <div class="alert-item__icon">🌨️</div>
+                <div class="alert-item__body">
+                  <p class="alert-item__title">Extreme Cold Watch</p>
+                  <p class="alert-item__meta">Northern Europe · Issued 12h ago</p>
+                </div>
+                <span class="badge badge--info">Watch</span>
+              </li>
+
+            </ul>
+          </article>
+
+          <!-- Sustainability Progress Tracker -->
+          <article class="card" aria-label="Sustainability Progress Tracker">
+            <div class="card__header">
+              <h2 class="card__title">♻️ Sustainability Progress</h2>
+              <span class="card__meta">2024 Targets</span>
+            </div>
+            <ul class="progress-list" aria-label="Sustainability progress indicators">
+
+              <li class="progress-item">
+                <div class="progress-item__header">
+                  <span class="progress-item__label">🌱 Carbon Neutrality</span>
+                  <span class="progress-item__pct">42%</span>
+                </div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-bar__fill progress-bar__fill--teal" style="--w:42%;"></div>
+                </div>
+                <span class="progress-item__sub">Target: 2050</span>
+              </li>
+
+              <li class="progress-item">
+                <div class="progress-item__header">
+                  <span class="progress-item__label">⚡ Renewable Energy</span>
+                  <span class="progress-item__pct">34.7%</span>
+                </div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-bar__fill progress-bar__fill--amber" style="--w:34.7%;"></div>
+                </div>
+                <span class="progress-item__sub">Target: 50% by 2030</span>
+              </li>
+
+              <li class="progress-item">
+                <div class="progress-item__header">
+                  <span class="progress-item__label">🌳 Reforestation</span>
+                  <span class="progress-item__pct">61%</span>
+                </div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="61" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-bar__fill progress-bar__fill--green" style="--w:61%;"></div>
+                </div>
+                <span class="progress-item__sub">Target: 1B trees by 2030</span>
+              </li>
+
+              <li class="progress-item">
+                <div class="progress-item__header">
+                  <span class="progress-item__label">💧 Clean Water Access</span>
+                  <span class="progress-item__pct">73%</span>
+                </div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-bar__fill progress-bar__fill--blue" style="--w:73%;"></div>
+                </div>
+                <span class="progress-item__sub">Target: 100% by 2030</span>
+              </li>
+
+              <li class="progress-item">
+                <div class="progress-item__header">
+                  <span class="progress-item__label">🏭 Emissions Reduction</span>
+                  <span class="progress-item__pct">28%</span>
+                </div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-bar__fill progress-bar__fill--red" style="--w:28%;"></div>
+                </div>
+                <span class="progress-item__sub">Target: 45% by 2030</span>
+              </li>
+
+            </ul>
+          </article>
+
+        </section>
+        <!-- /DISASTER ALERTS + SUSTAINABILITY TRACKER -->
+
+        <!-- ===========================================================
+             SECTION 4 — NEWS CARDS (3 cards)
+        =========================================================== -->
+        <section class="section" aria-label="Climate News">
+          <h2 class="section__title">📰 Latest Climate News</h2>
+          <div class="news-grid">
+
+            <!-- News Card 1 -->
+            <article class="news-card" aria-label="News: COP29 Outcomes">
+              <div class="news-card__tag news-card__tag--policy">Policy</div>
+              <h3 class="news-card__title">COP29 Delivers Historic Climate Finance Agreement</h3>
+              <p class="news-card__excerpt">
+                Nations commit to tripling climate finance for developing countries, reaching
+                $300B annually by 2035, amid ongoing debates over fossil fuel phase-out timelines.
+              </p>
+              <div class="news-card__footer">
+                <span class="news-card__source">Reuters Climate</span>
+                <time class="news-card__date" datetime="2024-11-18">Nov 18, 2024</time>
+              </div>
+            </article>
+
+            <!-- News Card 2 -->
+            <article class="news-card" aria-label="News: Solar Energy Milestone">
+              <div class="news-card__tag news-card__tag--energy">Energy</div>
+              <h3 class="news-card__title">Global Solar Capacity Crosses 2 Terawatts Milestone</h3>
+              <p class="news-card__excerpt">
+                The world's installed solar photovoltaic capacity has surpassed 2 TW for the
+                first time, led by rapid deployment in China, India, and the European Union.
+              </p>
+              <div class="news-card__footer">
+                <span class="news-card__source">IEA Reports</span>
+                <time class="news-card__date" datetime="2024-11-15">Nov 15, 2024</time>
+              </div>
+            </article>
+
+            <!-- News Card 3 -->
+            <article class="news-card" aria-label="News: Arctic Ice Loss">
+              <div class="news-card__tag news-card__tag--science">Science</div>
+              <h3 class="news-card__title">Arctic Sea Ice Hits Record November Low for Third Year</h3>
+              <p class="news-card__excerpt">
+                Scientists report that Arctic sea ice extent in November 2024 is the lowest ever
+                recorded, accelerating concerns over permafrost methane release and sea-level rise.
+              </p>
+              <div class="news-card__footer">
+                <span class="news-card__source">Nature Climate</span>
+                <time class="news-card__date" datetime="2024-11-12">Nov 12, 2024</time>
+              </div>
+            </article>
+
+          </div>
+        </section>
+        <!-- /NEWS CARDS -->
+
+        <!-- ===========================================================
+             SECTION 5 — ADMIN PROFILE CARD
+        =========================================================== -->
+        <section class="section" aria-label="Admin Profile">
+          <h2 class="section__title">👤 Admin Profile</h2>
+          <div class="profile-card">
+
+            <!-- Avatar -->
+            <div class="profile-card__avatar" aria-hidden="true">AD</div>
+
+            <!-- Identity Info -->
+            <div class="profile-card__info">
+              <h3 class="profile-card__name">Admin User</h3>
+              <p class="profile-card__role">Senior Climate Analyst · Climate Intelligence Unit</p>
+              <p class="profile-card__email">admin@climateiq.org</p>
+            </div>
+
+            <!-- Stats -->
+            <div class="profile-card__stats" aria-label="Admin statistics">
+              <div class="profile-stat">
+                <p class="profile-stat__value">1,284</p>
+                <p class="profile-stat__label">Reports</p>
+              </div>
+              <div class="profile-stat">
+                <p class="profile-stat__value">48</p>
+                <p class="profile-stat__label">Projects</p>
+              </div>
+              <div class="profile-stat">
+                <p class="profile-stat__value">9.2</p>
+                <p class="profile-stat__label">Accuracy</p>
+              </div>
+            </div>
+
+            <!-- Badges -->
+            <div class="profile-card__badges" aria-label="Admin achievement badges">
+              <span class="badge badge--success">🌱 Eco Analyst</span>
+              <span class="badge badge--info">📊 Data Expert</span>
+              <span class="badge badge--teal">🏆 Top Contributor</span>
+            </div>
+
+          </div>
+        </section>
+        <!-- /ADMIN PROFILE -->
+
+      </main>
+      <!-- /PAGE CONTENT -->
+
+      <!-- FOOTER -->
+      <footer class="footer" role="contentinfo">
+        <p>© 2024 ClimateIQ Intelligence Platform · Data updated hourly · All rights reserved</p>
+      </footer>
+
+    </div>
+    <!-- /MAIN CONTENT AREA -->
+
+  </div>
+  <!-- /LAYOUT WRAPPER -->
+
+</body>
+</html>
